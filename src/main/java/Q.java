@@ -32,7 +32,7 @@ public class Q {
     }
 
 
-    public boolean isEndQue() {
+    public synchronized boolean isEndQue() {
         return endQue;
     }
 

@@ -30,21 +30,16 @@ public class SourceThread extends Thread {
     }
 
 
-    public synchronized void addRandomStudent() {
+    public void addRandomStudent() {
         Random random = new Random();
         int state = random.nextInt(2) + 1;
-        if(biology != 0 && state == 1) {
-            studentsQue.add(new Student("Biolog"));
-            biology--;
-        } else if(mathematic !=0 && state ==2 ) {
+
+        if (mathematic != 0 ) {
             studentsQue.add(new Student("Mathematic"));
             mathematic--;
-        } else if(mathematic == 0 && biology !=0) {
+        } else if(biology != 0) {
             studentsQue.add(new Student("Biolog"));
             biology--;
-        } else if(biology == 0 && mathematic !=0) {
-            studentsQue.add(new Student("Mathematic"));
-            mathematic--;
         }
     }
 }
