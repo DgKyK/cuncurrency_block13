@@ -23,6 +23,7 @@ public class SourceThread extends Thread {
                     wait();
                 }
             }
+            System.out.println(studentsQue.studentsSize());
             studentsQue.setEndQue(true);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -30,7 +31,7 @@ public class SourceThread extends Thread {
     }
 
 
-    public void addRandomStudent() {
+    public synchronized void addRandomStudent() {
         Random random = new Random();
         int state = random.nextInt(2) + 1;
 
